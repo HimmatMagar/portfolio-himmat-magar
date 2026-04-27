@@ -1,26 +1,43 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { Stack } from "@/components/Stack";
+import { Focus } from "@/components/Focus";
+import { Education } from "@/components/Education";
+import { Contact } from "@/components/Contact";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen">
+      <Nav />
+      <Hero />
+      <section id="about" className="py-24 px-6">
+        <div className="mx-auto max-w-4xl">
+          <div className="mono text-sm text-primary mb-2">
+            <span className="opacity-60">$</span> cat about.txt
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">
+            ML Engineering sits at the <span className="text-gradient">crossroads</span> of data science and software engineering.
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            There's a big difference between training a model and deploying one.
+            Most students learn the first part — I'm committed to mastering both.
+            That means understanding how to wrap ML models into production-grade
+            APIs, containerize applications so they behave the same on every
+            machine, and think about software architecture when machine learning
+            is at the core of the product. That's where the most impactful work
+            happens.
+          </p>
+        </div>
+      </section>
+      <Stack />
+      <Focus />
+      <Education />
+      <Contact />
+    </main>
+  );
 }
