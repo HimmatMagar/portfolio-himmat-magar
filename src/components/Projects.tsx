@@ -47,7 +47,7 @@ const projects: Project[] = [
   {
     name: "Next Word Predictor (LSTM)",
     desc: "End-to-end deep learning next-word prediction system using an LSTM model, served through a lightweight web interface.",
-    tags: ["Python", "TensorFlow", "LSTM", "Deep Learning"],
+    tags: ["Python", "PyTorch", "LSTM", "Deep Learning"],
     url: "https://github.com/HimmatMagar/Next_Word_Predictior",
     overview:
       "LSTM-based language model that predicts the next likely word from input text, packaged with a small web UI for live demo.",
