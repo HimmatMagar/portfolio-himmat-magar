@@ -27,7 +27,7 @@ export function Hero() {
   }, [text, deleting, idx]);
 
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-24 pb-16 px-6 overflow-hidden">
+    <section id="top" className="relative min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       <div className="absolute top-1/3 -left-40 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
       <div className="absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-accent/20 blur-3xl" />
@@ -47,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight"
           >
             Himmat <span className="text-gradient">Magar</span>
           </motion.h1>
@@ -56,7 +56,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="mt-6 text-xl md:text-2xl mono"
+            className="mt-6 text-lg sm:text-xl md:text-2xl mono break-words"
           >
             <span className="text-muted-foreground">→ </span>
             <span className="text-foreground blink-caret">{text}</span>
@@ -100,7 +100,7 @@ export function Hero() {
             <span className="w-3 h-3 rounded-full bg-primary/70" />
             <span className="ml-3 mono text-xs text-muted-foreground">~/profile.py</span>
           </div>
-          <pre className="mono text-[13px] p-5 leading-relaxed overflow-x-auto">
+          <pre className="mono text-[11px] sm:text-[13px] p-4 sm:p-5 leading-relaxed overflow-x-auto">
 <span className="text-muted-foreground">{`# meet the engineer`}</span>{`\n`}
 <span className="text-accent">class</span> <span className="text-primary">Engineer</span>:{`\n`}
 {`    `}name = <span className="text-foreground">"Himmat Magar"</span>{`\n`}

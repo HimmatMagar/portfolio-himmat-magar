@@ -35,7 +35,7 @@ export function Focus() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.08 }}
-            className="p-7 rounded-xl border border-border bg-card/60 backdrop-blur hover:bg-card/90 transition-colors"
+            className="p-5 sm:p-7 rounded-xl border border-border bg-card/60 backdrop-blur hover:bg-card/90 transition-colors"
           >
             <div className="flex items-start gap-4">
               <div className="mono text-3xl font-bold text-gradient shrink-0">{it.k}</div>

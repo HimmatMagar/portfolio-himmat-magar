@@ -15,7 +15,7 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="rounded-2xl border border-primary/30 bg-card/70 backdrop-blur p-8 md:p-12 relative overflow-hidden"
+        className="rounded-2xl border border-primary/30 bg-card/70 backdrop-blur p-6 sm:p-8 md:p-12 relative overflow-hidden"
       >
         <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed relative">
