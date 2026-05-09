@@ -16,12 +16,12 @@ function Index() {
     <main className="min-h-screen">
       <Nav />
       <Hero />
-      <section id="about" className="py-24 px-6">
+      <section id="about" className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="mono text-sm text-primary mb-2">
             <span className="opacity-60">$</span> cat about.txt
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-8">
             ML Engineering sits at the <span className="text-gradient">crossroads</span> of data science and software engineering.
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
