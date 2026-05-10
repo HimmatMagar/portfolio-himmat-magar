@@ -47,26 +47,6 @@ export function Contact() {
           ))}
         </div>
 
-        <div className="mt-10 pt-8 border-t border-border/60 relative">
-          <div className="mono text-xs text-primary mb-3">$ cat resume.pdf</div>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="/himmat-magar-resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:glow transition-all"
-            >
-              <span className="mono">→</span> Open resume
-            </a>
-            <a
-              href="/himmat-magar-resume.pdf"
-              download
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-primary/40 text-sm font-medium hover:border-primary hover:bg-primary/10 transition-all"
-            >
-              <span className="mono">↓</span> Download PDF
-            </a>
-          </div>
-        </div>
       </motion.div>
 
       <div className="mt-16 text-center mono text-xs text-muted-foreground">
