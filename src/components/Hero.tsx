@@ -68,9 +68,10 @@ export function Hero() {
             transition={{ delay: 0.6, duration: 0.7 }}
             className="mt-8 max-w-xl text-muted-foreground leading-relaxed"
           >
-            CS undergraduate from Nepal building machine learning systems that don't
-            just work in theory — they ship to production. PyTorch models served as
-            clean REST APIs, containerized with Docker, deployed reliably.
+            CS undergraduate from Nepal building machine learning systems end-to-end —
+            from data preprocessing and model training in PyTorch to wrapping them
+            into clean REST APIs and containerizing with Docker.
+
           </motion.p>
 
           <motion.div
