@@ -121,7 +121,7 @@ export function Projects() {
   }, [active]);
 
   return (
-    <Section id="projects" command="ls ./projects" title="Selected Work">
+    <Section id="projects" command="ls ./projects" title="Projects I Have Done">
       <div className="grid md:grid-cols-2 gap-5">
         {projects.map((p, i) => (
           <motion.button

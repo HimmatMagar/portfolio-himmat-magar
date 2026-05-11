@@ -37,7 +37,7 @@ function Index() {
       </section>
       <Stack />
       <Projects />
-      <Focus />
+      
       <Education />
       <Contact />
     </main>
