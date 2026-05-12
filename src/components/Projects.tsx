@@ -11,7 +11,6 @@ type Project = {
   highlights: string[];
   readme: string;
   demo?: string;
-  live?: string;
 };
 
 const projects: Project[] = [
@@ -171,21 +170,8 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="mt-4 flex items-center justify-between gap-3">
-                <div className="mono text-[11px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                  $ click to inspect →
-                </div>
-                {p.live && (
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="mono text-[11px] px-2 py-1 rounded border border-primary/60 text-primary hover:bg-primary/10 transition-colors shrink-0"
-                  >
-                    ↗ live
-                  </a>
-                )}
+              <div className="mono text-[11px] text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                $ click to inspect →
               </div>
             </div>
           </motion.div>
@@ -290,16 +276,6 @@ export function Projects() {
                   >
                     ↗ README
                   </a>
-                  {active.live && (
-                    <a
-                      href={active.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mono text-xs px-3 py-2 rounded border border-primary/60 text-primary hover:bg-primary/10 transition-colors"
-                    >
-                      ↗ live
-                    </a>
-                  )}
                   {active.demo && (
                     <a
                       href={active.demo}
