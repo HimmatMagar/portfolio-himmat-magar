@@ -11,6 +11,7 @@ type Project = {
   highlights: string[];
   readme: string;
   demo?: string;
+  live?: string;
 };
 
 const projects: Project[] = [
@@ -269,6 +270,16 @@ export function Projects() {
                   >
                     ↗ README
                   </a>
+                  {active.live && (
+                    <a
+                      href={active.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mono text-xs px-3 py-2 rounded border border-primary/60 text-primary hover:bg-primary/10 transition-colors"
+                    >
+                      ↗ live
+                    </a>
+                  )}
                   {active.demo && (
                     <a
                       href={active.demo}
