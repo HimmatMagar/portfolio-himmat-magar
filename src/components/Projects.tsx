@@ -125,15 +125,22 @@ export function Projects() {
     <Section id="projects" command="ls ./projects" title="Projects I Have Done">
       <div className="grid md:grid-cols-2 gap-5">
         {projects.map((p, i) => (
-          <motion.button
+          <motion.div
             key={p.name}
-            type="button"
-            onClick={() => setActive(p)}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: i * 0.06, duration: 0.5 }}
             whileHover={{ y: -6 }}
+            role="button"
+            tabIndex={0}
+            onClick={() => setActive(p)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setActive(p);
+              }
+            }}
             className="group relative block text-left p-6 rounded-lg border border-border bg-card/60 backdrop-blur hover:border-primary/60 transition-all overflow-hidden cursor-pointer"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-primary/5 to-accent/5 transition-opacity" />
@@ -164,11 +171,24 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="mono text-[11px] text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                $ click to inspect →
+              <div className="mt-4 flex items-center justify-between gap-3">
+                <div className="mono text-[11px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  $ click to inspect →
+                </div>
+                {p.live && (
+                  <a
+                    href={p.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="mono text-[11px] px-2 py-1 rounded border border-primary/60 text-primary hover:bg-primary/10 transition-colors shrink-0"
+                  >
+                    ↗ live
+                  </a>
+                )}
               </div>
             </div>
-          </motion.button>
+          </motion.div>
         ))}
       </div>
 
