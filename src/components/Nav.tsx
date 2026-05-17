@@ -1,14 +1,18 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const links = [
-  { href: "#about", label: "about" },
-  { href: "#projects", label: "work" },
-  { href: "#contact", label: "contact" },
+  { href: "#about", id: "about", label: "about" },
+  { href: "#projects", id: "projects", label: "work" },
+  { href: "#contact", id: "contact", label: "contact" },
 ];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string>("");
+
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.4 });
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -16,6 +20,25 @@ export function Nav() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useEffect(() => {
+    const sections = links
+      .map((l) => document.getElementById(l.id))
+      .filter((el): el is HTMLElement => !!el);
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActiveId(visible[0].target.id);
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.header
@@ -29,15 +52,27 @@ export function Nav() {
           ~/himmat.magar
         </a>
         <nav className="hidden md:flex items-center gap-7 mono text-sm">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              <span className="text-primary">$</span> {l.label}
-            </a>
-          ))}
+          {links.map((l) => {
+            const isActive = activeId === l.id;
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`relative transition-colors ${
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                }`}
+              >
+                <span className="text-primary">$</span> {l.label}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute -bottom-1.5 left-0 right-0 h-px bg-gradient-to-r from-primary to-accent"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </a>
+            );
+          })}
         </nav>
         <div className="flex items-center gap-2">
           <a
@@ -58,6 +93,11 @@ export function Nav() {
         </div>
       </div>
 
+      <motion.div
+        style={{ scaleX: progress, transformOrigin: "0% 50%" }}
+        className="h-0.5 w-full bg-gradient-to-r from-primary via-accent to-primary"
+      />
+
       <AnimatePresence>
         {open && (
           <motion.div
@@ -68,16 +108,23 @@ export function Nav() {
             className="md:hidden border-t border-border bg-background/95 backdrop-blur"
           >
             <nav className="px-4 py-4 flex flex-col gap-1 mono text-sm">
-              {links.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="px-3 py-3 rounded-md text-muted-foreground hover:text-primary hover:bg-card/60 transition-colors"
-                >
-                  <span className="text-primary">$</span> {l.label}
-                </a>
-              ))}
+              {links.map((l) => {
+                const isActive = activeId === l.id;
+                return (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className={`px-3 py-3 rounded-md transition-colors ${
+                      isActive
+                        ? "text-primary bg-card/60"
+                        : "text-muted-foreground hover:text-primary hover:bg-card/60"
+                    }`}
+                  >
+                    <span className="text-primary">$</span> {l.label}
+                  </a>
+                );
+              })}
               <a
                 href="mailto:himmatmagar007@gmail.com"
                 onClick={() => setOpen(false)}
