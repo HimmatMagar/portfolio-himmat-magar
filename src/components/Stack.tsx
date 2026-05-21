@@ -31,7 +31,7 @@ const cardVariants = {
     y: 0,
     scale: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 120,
       damping: 18,
       mass: 0.6,
@@ -56,7 +56,7 @@ export function Stack() {
             whileHover={{
               y: -6,
               scale: 1.02,
-              transition: { type: "spring", stiffness: 300, damping: 20 },
+              transition: { type: "spring" as const, stiffness: 300, damping: 20 },
             }}
             className="group relative p-5 rounded-lg border border-border bg-card/60 backdrop-blur hover:border-primary/60 transition-colors overflow-hidden cursor-default"
           >
@@ -72,4 +72,3 @@ export function Stack() {
     </Section>
   );
 }
-
