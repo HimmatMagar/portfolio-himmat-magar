@@ -35,8 +35,8 @@ function Index() {
         </div>
       </section>
       <Stack />
-      <PromptEngineering />
       <Projects />
+      <Education />
       <Education />
       <Contact />
     </main>
