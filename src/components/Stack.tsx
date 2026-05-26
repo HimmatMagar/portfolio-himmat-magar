@@ -39,9 +39,42 @@ const cardVariants = {
   },
 };
 
+const promptSkills = [
+  "Chain-of-thought design",
+  "Few-shot prompting",
+  "Structured outputs (JSON schema)",
+  "RAG context shaping",
+  "Eval-driven iteration",
+  "Agentic workflows",
+];
+
 export function Stack() {
   return (
     <Section id="stack" command="ls ./stack" title="The Toolbox">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6 }}
+        className="mb-10 p-6 rounded-lg border border-border bg-card/60 backdrop-blur"
+      >
+        <div className="mono text-xs text-primary mb-2">// prompt engineering</div>
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
+          Beyond training models, I design the prompts and workflows that get the
+          most out of LLMs — turning fuzzy requirements into reliable, structured
+          behavior through careful context engineering and evaluation loops.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {promptSkills.map((skill) => (
+            <span
+              key={skill}
+              className="mono text-xs px-3 py-1 rounded-full border border-border bg-background/60 text-foreground/80"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </motion.div>
       <motion.div
         className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
         variants={gridVariants}
