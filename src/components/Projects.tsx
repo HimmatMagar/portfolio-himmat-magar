@@ -47,7 +47,7 @@ const projects: Project[] = [
   {
     name: "Cat vs Dog Classifier",
     desc: "Deep learning image classifier distinguishing cats from dogs using a CNN trained on labeled image data.",
-    tags: ["Python", "PyTorch", "CNN", "Computer Vision"],
+    tags: ["Python", "PyTorch", "CNN"],
     url: "https://github.com/HimmatMagar/cat-vs-dog-classifier",
     overview:
       "Convolutional neural network that classifies input images as cat or dog — covering data loading, augmentation, model training, and evaluation in a Jupyter notebook workflow.",
@@ -62,7 +62,7 @@ const projects: Project[] = [
   {
     name: "Waste Classification",
     desc: "Deep learning image classifier that sorts waste into categories to support smarter recycling workflows.",
-    tags: ["Python", "PyTorch", "CNN", "Computer Vision"],
+    tags: ["Python", "PyTorch", "CNN"],
     url: "https://github.com/HimmatMagar/Waste-Classification",
     overview:
       "CNN-based image classifier that categorizes waste images (e.g. organic vs recyclable) — covering dataset prep, augmentation, transfer learning, and evaluation.",
