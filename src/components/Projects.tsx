@@ -30,21 +30,6 @@ const projects: Project[] = [
     readme: "https://github.com/HimmatMagar/Email_Spam_Classifier#readme",
   },
   {
-    name: "Question Answering System (GPT)",
-    desc: "End-to-end question answering system built on a decoder-only GPT-style model. Covers data prep, fine-tuning, and inference.",
-    tags: ["Python", "Transformers", "LLM", "NLP"],
-    url: "https://github.com/HimmatMagar/Question-Answering-System-GPT",
-    overview:
-      "QA system built around a decoder-only GPT-style architecture — from tokenization and dataset prep through fine-tuning and inference for context-grounded answers.",
-    highlights: [
-      "Custom data pipeline for QA pairs",
-      "Fine-tuning loop with checkpointing",
-      "Inference utilities for prompt-based QA",
-      "Clean separation of training vs serving code",
-    ],
-    readme: "https://github.com/HimmatMagar/Question-Answering-System-GPT#readme",
-  },
-  {
     name: "Next Word Predictor (LSTM)",
     desc: "End-to-end deep learning next-word prediction system using an LSTM model, served through a lightweight web interface.",
     tags: ["Python", "PyTorch", "LSTM", "Deep Learning"],
@@ -58,21 +43,6 @@ const projects: Project[] = [
       "End-to-end: data → model → app",
     ],
     readme: "https://github.com/HimmatMagar/Next_Word_Predictior#readme",
-  },
-  {
-    name: "Visa Eligibility Predictor — AU",
-    desc: "Production-style ML pipeline predicting Australian visa eligibility, structured with modular components for training and serving.",
-    tags: ["Python", "ML Pipeline", "FastAPI"],
-    url: "https://github.com/HimmatMagar/VisaEligibilityPredictor-AU",
-    overview:
-      "Industrial-grade ML project predicting Australian visa eligibility — built with reusable components, configs, and a serving layer ready for deployment.",
-    highlights: [
-      "Modular pipeline: ingestion, validation, transformation, training",
-      "Hyperparameter tuning + model evaluation",
-      "API-ready serving layer",
-      "Logging, exception handling, and config management",
-    ],
-    readme: "https://github.com/HimmatMagar/VisaEligibilityPredictor-AU#readme",
   },
   {
     name: "Cat vs Dog Classifier",
@@ -90,21 +60,52 @@ const projects: Project[] = [
     readme: "https://github.com/HimmatMagar/cat-vs-dog-classifier#readme",
   },
   {
-    name: "Text Summarization",
-    desc: "Abstractive text summarization pipeline experimenting with transformer-based models for compressing long-form content.",
-    tags: ["Python", "NLP", "Transformers"],
-    url: "https://github.com/HimmatMagar/Text_Summarization",
+    name: "Waste Classification",
+    desc: "Deep learning image classifier that sorts waste into categories to support smarter recycling workflows.",
+    tags: ["Python", "PyTorch", "CNN", "Computer Vision"],
+    url: "https://github.com/HimmatMagar/Waste-Classification",
     overview:
-      "Transformer-based abstractive summarization pipeline — from data preparation to fine-tuning and evaluation on summarization metrics.",
+      "CNN-based image classifier that categorizes waste images (e.g. organic vs recyclable) — covering dataset prep, augmentation, transfer learning, and evaluation.",
     highlights: [
-      "HuggingFace Transformers integration",
-      "Tokenization and batching for long-form text",
-      "Fine-tuning with evaluation (ROUGE-style metrics)",
-      "Modular training + inference scripts",
+      "Curated waste image dataset with augmentation",
+      "Transfer learning from a pretrained CNN backbone",
+      "Class-balanced training with accuracy/F1 tracking",
+      "Inference script for single-image predictions",
     ],
-    readme: "https://github.com/HimmatMagar/Text_Summarization#readme",
+    readme: "https://github.com/HimmatMagar/Waste-Classification#readme",
+  },
+  {
+    name: "Question Answering System (GPT)",
+    desc: "End-to-end question answering system built on a decoder-only GPT-style model. Covers data prep, fine-tuning, and inference.",
+    tags: ["Python", "Transformers", "LLM", "NLP"],
+    url: "https://github.com/HimmatMagar/Question-Answering-System-GPT",
+    overview:
+      "QA system built around a decoder-only GPT-style architecture — from tokenization and dataset prep through fine-tuning and inference for context-grounded answers.",
+    highlights: [
+      "Custom data pipeline for QA pairs",
+      "Fine-tuning loop with checkpointing",
+      "Inference utilities for prompt-based QA",
+      "Clean separation of training vs serving code",
+    ],
+    readme: "https://github.com/HimmatMagar/Question-Answering-System-GPT#readme",
+  },
+  {
+    name: "Movie Recommendation System",
+    desc: "Content-based movie recommender that suggests similar titles from a user's pick using NLP feature engineering and similarity scoring.",
+    tags: ["Python", "NLP", "scikit-learn", "Recommender"],
+    url: "https://github.com/HimmatMagar/Movie-Recommendation-System",
+    overview:
+      "Content-based recommendation engine that combines movie metadata (genres, cast, keywords, overview) into feature vectors and ranks similar films via cosine similarity.",
+    highlights: [
+      "Metadata cleaning and feature engineering",
+      "TF-IDF / count vectorization of textual features",
+      "Cosine similarity ranking for top-N recommendations",
+      "Notebook + script workflow for reproducibility",
+    ],
+    readme: "https://github.com/HimmatMagar/Movie-Recommendation-System#readme",
   },
 ];
+
 
 export function Projects() {
   const [active, setActive] = useState<Project | null>(null);
