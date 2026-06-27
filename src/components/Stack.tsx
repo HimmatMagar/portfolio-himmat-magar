@@ -11,7 +11,7 @@ const stack = [
   { name: "MLflow", desc: "Experiment tracking" },
   { name: "DVC", desc: "Data version control" },
   { name: "GitHub", desc: "Version control & CI" },
-  { name: "Prompt Engineering", desc: "Designing LLM prompts & workflows" },
+  
 ];
 
 const gridVariants = {
